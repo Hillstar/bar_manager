@@ -10,8 +10,8 @@ import SwiftUI
 
 struct AddCoctailView: View {
     @Binding var isPresentingAddCoctailView: Bool
-    @Binding var coctails: [Coctailtem]
-    @State var newCoctail = Coctailtem()
+    @Binding var coctails: [CoctailItem]
+    @State var newCoctail = CoctailItem()
     
     var body: some View {
         NavigationStack {
@@ -48,6 +48,6 @@ struct AddCoctailView: View {
 struct addCoctailView_Previews: PreviewProvider {
     static var previews: some View {
         AddCoctailView(isPresentingAddCoctailView: .constant(true),
-                       coctails: .constant(Coctailtem.sampleData))
+                       coctails: .constant(CoctailItem.sampleArrayData))
     }
 }

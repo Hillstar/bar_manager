@@ -7,75 +7,9 @@
 
 import SwiftUI
 
-struct Coctailtem: Identifiable, Decodable {
-    let id = UUID().uuidString
-    var name: String
-    var imageName: String
-    var ingredients: String
-    var recipe: String
-    
-    enum CodingKeys: String, CodingKey {
-        case name
-        case imageName
-        case ingredients
-        case recipe
-    }
-    
-    init(name: String = "", imageName: String = "", ingredients: String = "", recipe: String = "") {
-        self.name = name
-        self.imageName = imageName
-        self.ingredients = ingredients
-        self.recipe = recipe
-    }
-}
-
-// for args in previews
-extension Coctailtem {
-    static let sampleData: [Coctailtem] =
-    [
-        Coctailtem(
-            name: "sample name",
-            imageName: "sampleImageName",
-            ingredients: "sampleIngredients",
-            recipe: "sampleRecipe"
-        )
-    ]
-}
-
-struct CoctailView: View {
-    let coctail: Coctailtem
-    
-    var body: some View {
-        VStack(spacing: 10) {
-            ScrollView {
-                Text(coctail.name)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 40))
-                Image(coctail.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 350, height: 350)
-                    .clipped()
-                    .cornerRadius(15)
-                    .padding(.all)
-                Text("INGREDIENTS: ")
-                    .fontWeight(.bold)
-                Text(coctail.ingredients)
-                    .padding(.horizontal, 20)
-                    .multilineTextAlignment(.leading)
-                Text("RECIPE: ")
-                    .fontWeight(.bold)
-                Text(coctail.recipe)
-                    .multilineTextAlignment(.leading)
-                    .padding(.horizontal, 20)
-            }
-        }
-    }
-}
-
 struct ContentView: View {
-    @State var coctails_loaded:[Coctailtem] = []
+    
+    @State var coctails_loaded:[CoctailItem] = []
     @State private var isPresentingAddCoctailView = false
     
     var body: some View {
@@ -86,7 +20,7 @@ struct ContentView: View {
                 }
                 do {
                     let data = try Data(contentsOf: path)
-                    coctails_loaded = try JSONDecoder().decode([Coctailtem].self, from: data)
+                    coctails_loaded = try JSONDecoder().decode([CoctailItem].self, from: data)
                 } catch {
                     print(error)
                 }
