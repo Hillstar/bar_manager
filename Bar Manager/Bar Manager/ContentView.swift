@@ -9,10 +9,10 @@ import SwiftUI
 
 struct Coctailtem: Identifiable, Decodable {
     let id = UUID().uuidString
-    let name: String
-    let imageName: String
-    let ingredients: String
-    let recipe: String
+    var name: String
+    var imageName: String
+    var ingredients: String
+    var recipe: String
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -20,6 +20,26 @@ struct Coctailtem: Identifiable, Decodable {
         case ingredients
         case recipe
     }
+    
+    init(name: String = "", imageName: String = "", ingredients: String = "", recipe: String = "") {
+        self.name = name
+        self.imageName = imageName
+        self.ingredients = ingredients
+        self.recipe = recipe
+    }
+}
+
+// for args in previews
+extension Coctailtem {
+    static let sampleData: [Coctailtem] =
+    [
+        Coctailtem(
+            name: "sample name",
+            imageName: "sampleImageName",
+            ingredients: "sampleIngredients",
+            recipe: "sampleRecipe"
+        )
+    ]
 }
 
 struct CoctailView: View {
@@ -56,6 +76,7 @@ struct CoctailView: View {
 
 struct ContentView: View {
     @State var coctails_loaded:[Coctailtem] = []
+    @State private var isPresentingAddCoctailView = false
     
     var body: some View {
         VStack {
@@ -71,7 +92,7 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            NavigationView {
+            NavigationStack {
                 List(coctails_loaded) { coctail in
                     NavigationLink(
                         destination: {
@@ -80,8 +101,22 @@ struct ContentView: View {
                             Text(coctail.name)
                         }
                     )
-                    .navigationTitle("Coctails")
                 }
+                .navigationTitle("Coctails")
+                .toolbar {
+                    Button(action: {
+                        isPresentingAddCoctailView = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("New Coctail")
+                }
+            }
+            .sheet(isPresented: $isPresentingAddCoctailView) {
+                AddCoctailView(
+                    isPresentingAddCoctailView: $isPresentingAddCoctailView,
+                    coctails: $coctails_loaded
+                )
             }
         }
     }

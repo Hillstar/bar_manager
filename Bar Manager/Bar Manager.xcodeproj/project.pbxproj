@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011F679D2A90C9D8004AAAD5 /* Coctail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F679B2A90C9D8004AAAD5 /* Coctail+CoreDataClass.swift */; };
+		011F679E2A90C9D8004AAAD5 /* Coctail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F679C2A90C9D8004AAAD5 /* Coctail+CoreDataProperties.swift */; };
+		011F67A12AA0F4C9004AAAD5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F67A02AA0F4C9004AAAD5 /* DataController.swift */; };
+		012AAA762A87E5A900D36D85 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012AAA742A87E5A900D36D85 /* Model.xcdatamodeld */; };
+		0146DA4D2AA329AE00B862B8 /* default_coctails.json in Resources */ = {isa = PBXBuildFile; fileRef = 0146DA4C2AA329AE00B862B8 /* default_coctails.json */; };
 		016826B52A698A5400911F4F /* Bar_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016826B42A698A5400911F4F /* Bar_ManagerApp.swift */; };
 		016826B72A698A5400911F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016826B62A698A5400911F4F /* ContentView.swift */; };
 		016826B92A698A5400911F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016826B82A698A5400911F4F /* Assets.xcassets */; };
 		016826BC2A698A5400911F4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016826BB2A698A5400911F4F /* Preview Assets.xcassets */; };
+		01809F222B1C7BBE007500B1 /* AddCoctailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01809F212B1C7BBE007500B1 /* AddCoctailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011F679B2A90C9D8004AAAD5 /* Coctail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coctail+CoreDataClass.swift"; sourceTree = "<group>"; };
+		011F679C2A90C9D8004AAAD5 /* Coctail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coctail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		011F67A02AA0F4C9004AAAD5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		012AAA752A87E5A900D36D85 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0146DA4C2AA329AE00B862B8 /* default_coctails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = default_coctails.json; sourceTree = "<group>"; };
 		016826B12A698A5400911F4F /* Bar Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bar Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016826B42A698A5400911F4F /* Bar_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar_ManagerApp.swift; sourceTree = "<group>"; };
 		016826B62A698A5400911F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		016826B82A698A5400911F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		016826BB2A698A5400911F4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		01809F212B1C7BBE007500B1 /* AddCoctailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoctailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +44,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011F679F2AA0F463004AAAD5 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				011F679B2A90C9D8004AAAD5 /* Coctail+CoreDataClass.swift */,
+				011F679C2A90C9D8004AAAD5 /* Coctail+CoreDataProperties.swift */,
+				012AAA742A87E5A900D36D85 /* Model.xcdatamodeld */,
+				011F67A02AA0F4C9004AAAD5 /* DataController.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		016826A82A698A5400911F4F = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +76,11 @@
 			children = (
 				016826B42A698A5400911F4F /* Bar_ManagerApp.swift */,
 				016826B62A698A5400911F4F /* ContentView.swift */,
+				01809F212B1C7BBE007500B1 /* AddCoctailView.swift */,
+				011F679F2AA0F463004AAAD5 /* DataModel */,
 				016826B82A698A5400911F4F /* Assets.xcassets */,
 				016826BA2A698A5400911F4F /* Preview Content */,
+				0146DA4C2AA329AE00B862B8 /* default_coctails.json */,
 			);
 			path = "Bar Manager";
 			sourceTree = "<group>";
@@ -126,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016826BC2A698A5400911F4F /* Preview Assets.xcassets in Resources */,
+				0146DA4D2AA329AE00B862B8 /* default_coctails.json in Resources */,
 				016826B92A698A5400911F4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +165,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				016826B72A698A5400911F4F /* ContentView.swift in Sources */,
+				011F67A12AA0F4C9004AAAD5 /* DataController.swift in Sources */,
+				01809F222B1C7BBE007500B1 /* AddCoctailView.swift in Sources */,
+				011F679E2A90C9D8004AAAD5 /* Coctail+CoreDataProperties.swift in Sources */,
+				011F679D2A90C9D8004AAAD5 /* Coctail+CoreDataClass.swift in Sources */,
 				016826B52A698A5400911F4F /* Bar_ManagerApp.swift in Sources */,
+				012AAA762A87E5A900D36D85 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		012AAA742A87E5A900D36D85 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				012AAA752A87E5A900D36D85 /* Model.xcdatamodel */,
+			);
+			currentVersion = 012AAA752A87E5A900D36D85 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 016826A92A698A5400911F4F /* Project object */;
 }
